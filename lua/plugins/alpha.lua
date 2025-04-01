@@ -1,15 +1,14 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/alpha.lua                     --
+--   File: ~/.config/nvim/lua/plugins/alpha.lua                               --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:16:55 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:00:58 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:24:32 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
-
 return {
     "goolord/alpha-nvim",
     dependencies = {
@@ -71,5 +70,12 @@ return {
         -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 
         alpha.setup(dashboard.opts)
+
+        -- Define the keybind for Alt + a (using <A-a>)
+        vim.keymap.set(
+            "n", "<A-a>", function() require("alpha").start() end, {
+                desc = "Open Alpha",
+            }
+        )
     end,
 }

@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/core/keymaps.lua                      --
+--   File: ~/.config/nvim/lua/core/keymaps.lua                                --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:16:19 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:34:35 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:27:29 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 

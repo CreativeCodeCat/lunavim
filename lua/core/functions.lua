@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/core/functions.lua                    --
+--   File: ~/.config/nvim/lua/core/functions.lua                              --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:16:04 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:50:04 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:49:04 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 
@@ -40,92 +40,77 @@ M.nvim_config_plugins_root = string.format(
                                  M.sep
                              )
 
+-- Get the list of all Lua files in a given directory
+local function get_lua_files_in_directory(directory)
+    local files = {}
+    for _, file in ipairs(vim.fn.readdir(directory)) do
+        if file:match("%.lua$") then
+            table.insert(files, file)
+        end
+    end
+    return files
+end
+
+-- Ensure the directory ends with a separator
+local function ensure_trailing_separator(directory)
+    if not directory:match(M.sep .. "$") then
+        return directory .. M.sep
+    end
+    return directory
+end
+
+-- Dynamically build the config file paths list
+local function build_config_file_paths()
+    local config_files = {}
+
+    -- Add the core files
+    for _, file in ipairs(get_lua_files_in_directory(M.nvim_config_core_root)) do
+        table.insert(config_files, {file, ensure_trailing_separator(M.nvim_config_core_root) .. file})
+    end
+
+    -- Add user files
+    for _, file in ipairs(get_lua_files_in_directory(M.nvim_config_user_root)) do
+        table.insert(config_files, {file, ensure_trailing_separator(M.nvim_config_user_root) .. file})
+    end
+
+    -- Add plugin files
+    for _, file in ipairs(get_lua_files_in_directory(M.nvim_config_plugins_root)) do
+        table.insert(config_files, {file, ensure_trailing_separator(M.nvim_config_plugins_root) .. file})
+    end
+
+    return config_files
+end
+
 M.edit_config = function()
-    local config_files = {
-        "1. init.lua (default)",
-        "2. alpha.lua",
-        "3. autocompletion.lua",
-        "4. bufferline.lua",
-        "5. colortheme.lua",
-        "6. comment.lua",
-        "7. gitsigns.lua",
-        "8. header.lua",
-        "9. indent-blankline.lua",
-        "10. lualine.lua",
-        "11. misc.lua",
-        "12. neotree.lua",
-        "13. telescope.lua",
-        "14. treesitter.lua",
-        "15. which-key.lua",
-        "16. commands.lua (user)",
-        "17. functions.lua (core)",
-        "18. keymaps.lua (core)",
-        "19. options.lua (core)",
-        "20. snippets.lua (core)",
-        "21. vimkeys.lua (core)",
-    }
+    local config_files = build_config_file_paths()
+
+    -- Generate a menu with the config file names
+    local config_file_names = {}
+    for i, file_data in ipairs(config_files) do
+        table.insert(config_file_names, string.format("%d. %s", i, file_data[1]))
+    end
 
     -- Display menu and get user selection
     local selected_config = tonumber(
-                                vim.fn.inputlist(
-                                    vim.tbl_extend(
-                                        "force", {
+        vim.fn.inputlist(
+            vim.tbl_extend(
+                "force", {
                     "Select a configuration file to edit:",
-                }, config_files
-                                    )
-                                )
-                            )
+                }, config_file_names
+            )
+        )
+    )
 
-    local open_command = "edit"
-    local paths = {
-        [1] = string.format("%s%sinit.lua", M.nvim_default_root, M.sep),
-        [2] = string.format("%s%salpha.lua", M.nvim_config_plugins_root, M.sep),
-        [3] = string.format(
-            "%s%sautocompletion.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [4] = string.format(
-            "%s%sbufferline.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [5] = string.format(
-            "%s%scolortheme.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [6] = string.format("%s%scomment.lua", M.nvim_config_plugins_root, M.sep),
-        [7] = string.format(
-            "%s%sgitsigns.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [8] = string.format("%s%sheader.lua", M.nvim_config_plugins_root, M.sep),
-        [9] = string.format(
-            "%s%sindent-blankline.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [10] = string.format(
-            "%s%slualine.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [11] = string.format("%s%smisc.lua", M.nvim_config_plugins_root, M.sep),
-        [12] = string.format(
-            "%s%sneotree.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [13] = string.format(
-            "%s%stelescope.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [14] = string.format(
-            "%s%streesitter.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [15] = string.format(
-            "%s%swhich-key.lua", M.nvim_config_plugins_root, M.sep
-        ),
-        [16] = string.format("%s%scommands.lua", M.nvim_config_user_root, M.sep),
-        [17] = string.format("%s%sfunctions.lua", M.nvim_config_core_root, M.sep),
-        [18] = string.format("%s%skeymaps.lua", M.nvim_config_core_root, M.sep),
-        [19] = string.format("%s%soptions.lua", M.nvim_config_core_root, M.sep),
-        [20] = string.format("%s%ssnippets.lua", M.nvim_config_core_root, M.sep),
-        [21] = string.format("%s%svimkeys.lua", M.nvim_config_core_root, M.sep),
-    }
-
-    if paths[selected_config] then
-        vim.cmd(string.format("%s %s", open_command, paths[selected_config]))
-    elseif selected_config ~= 0 then
+    if selected_config and selected_config > 0 and selected_config <= #config_files then
+        local selected_file = config_files[selected_config]
+        print("\nOpening file: " .. selected_file[2])  -- Debug print to check path
+        vim.cmd(string.format("edit %s", selected_file[2]))
+    elseif selected_config == 0 then
+        print("\nNo file selected.")
+    else
         print("\nInvalid option selected.")
     end
 end
 
 return M
+

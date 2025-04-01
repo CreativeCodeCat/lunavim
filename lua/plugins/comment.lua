@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/comment.lua                   --
+--   File: ~/.config/nvim/lua/plugins/comment.lua                             --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:17:58 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:31:34 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:25:38 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 -- Easily comment visual regions/lines

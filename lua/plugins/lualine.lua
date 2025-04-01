@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/lualine.lua                   --
+--   File: ~/.config/nvim/lua/plugins/lualine.lua                             --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:18:49 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:01:14 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:25:59 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 
@@ -24,7 +24,7 @@ return {
         local filename = {
             "filename",
             file_status = true, -- displays file status (readonly status, modified status)
-            path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+            path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
         }
 
         local hide_in_width = function() return vim.fn.winwidth(0) > 100 end

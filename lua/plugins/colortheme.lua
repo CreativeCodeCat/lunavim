@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/colortheme.lua                --
+--   File: ~/.config/nvim/lua/plugins/colortheme.lua                          --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:17:51 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:50:42 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:28:24 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 

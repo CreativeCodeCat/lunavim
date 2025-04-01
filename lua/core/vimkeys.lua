@@ -1,14 +1,15 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/core/vimkeys.lua                      --
+--   File: ~/.config/nvim/lua/core/vimkeys.lua                                --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 26 Jan 2022, 06:02:53 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:14:36 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:28:05 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
+
 -- Version=2024.03.31
 -- Bail out if this isn't wanted.
 if vim.g.skip_loading_mswin then

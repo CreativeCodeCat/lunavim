@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/neotree.lua                   --
+--   File: ~/.config/nvim/lua/plugins/neotree.lua                             --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:19:16 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:01:17 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:26:19 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 

@@ -1,15 +1,14 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/init.lua                                  --
+--   File: ~/.config/nvim/init.lua                                            --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:13:56 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 07:54:17 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:24:24 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
-
 require "core.options" -- Load general options
 require "core.keymaps" -- Load general keymaps
 require "core.vimkeys" -- Load vimkeys keymaps
@@ -36,22 +35,27 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Set up plugins
-require("lazy").setup {
-    require "plugins.alpha",
-    require "plugins.autocompletion",
-    require "plugins.bufferline",
-    require "plugins.colortheme",
-    require "plugins.comment",
-    require "plugins.gitsigns",
-    require "plugins.header",
-    require "plugins.indent-blankline",
-    require "plugins.lualine",
-    require "plugins.misc",
-    require "plugins.neotree",
-    require "plugins.telescope",
-    require "plugins.treesitter",
-    require "plugins.which-key",
-}
+require("lazy").setup(
+    {
+        spec = {
+            -- import your plugins
+            {
+                import = "plugins",
+            },
+        },
+        -- Configure any other settings here. See the documentation for more details.
+        -- colorscheme that will be used when installing plugins.
+        install = {
+            colorscheme = {
+                "nord",
+            },
+        },
+        -- automatically check for plugin updates
+        checker = {
+            enabled = true,
+        },
+    }
+)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

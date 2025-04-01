@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/indent-blankline.lua               --
+--   File: ~/.config/nvim/lua/plugins/indent-blankline.lua                    --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:18:42 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:01:10 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:25:52 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 

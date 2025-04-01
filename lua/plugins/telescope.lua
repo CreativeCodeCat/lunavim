@@ -1,12 +1,12 @@
 -- -------------------------------------------------------------------------- --
 --                                                                            --
---   File: /home/wayne/.config/nvim/lua/plugins/telescope.lua                 --
+--   File: ~/.config/nvim/lua/plugins/telescope.lua                           --
 --                                                                            --
 --   Author: CreativeCodeCat <wayne6324@gmail.com>                            --
 --   Git: https://github.com/CreativeCodeCat                                  --
 --                                                                            --
 --   Created: 31 Mar 2025, 07:19:22 pm by CreativeCodeCat                     --
---   Updated: 31 Mar 2025, 08:01:19 pm by CreativeCodeCat                     --
+--   Updated: 01 Apr 2025, 09:26:31 am by CreativeCodeCat                     --
 --                                                                            --
 -- -------------------------------------------------------------------------- --
 
